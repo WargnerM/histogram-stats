@@ -16,18 +16,18 @@
   }
 
   let sumY = 0;
-  let cumSumY = new Array(y.length);
+  let cumSumY = 0;
   let i;
 
   for (i = 0; i < y.length; i++) {
     sumY += y[i];
-    cumSumY[i] = sumY;
   }
 
   for (i = 0; i < cumSumY.length; i++) {
-    if (cumSumY[i] > sumY / 2) {
+   cumSumY += y[i];
+    if (cumSumY > sumY / 2) {
       return x[i];
-    } else if (cumSumY[i] === sumY / 2) {
+    } else if (cumSumY === sumY / 2) {
       return 0.5 * (x[i] + x[i + 1]);
     }
   }
